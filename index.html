@@ -8,53 +8,316 @@
 <title>AQVORIX — Tu espacio, tus ideas</title>
 <style>
 *{box-sizing:border-box}
+:root{color-scheme:dark}
+html{scroll-behavior:smooth}
 body{margin:0;background:#08090d;color:#f5f5fa;font-family:Arial,sans-serif}
 header,main,footer{max-width:1000px;margin:auto;padding:24px}
-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #252630}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #252630}
 .logo{font-size:25px;font-weight:800;letter-spacing:4px}
 .tag{color:#a4a5b5;font-size:13px}
-.hero{padding-top:100px;padding-bottom:90px}
+.hero{padding-top:85px;padding-bottom:70px}
 .badge{color:#b7a5ff;border:1px solid #51417b;border-radius:30px;padding:9px 14px;font-size:12px}
 h1{font-size:clamp(42px,8vw,76px);line-height:1.05;letter-spacing:-2px;margin:30px 0 20px}
 h1 span{color:#a995ff}
 p{color:#b8b9c8;line-height:1.8}
 .hero p{max-width:600px;font-size:18px}
-.button{display:inline-block;margin-top:20px;padding:14px 22px;border-radius:10px;background:#a995ff;color:#101018;text-decoration:none;font-weight:bold}
+.button{display:inline-block;margin:12px 8px 0 0;padding:14px 22px;border:0;border-radius:10px;background:#a995ff;color:#101018;text-decoration:none;font-weight:bold;cursor:pointer;font-size:14px}
+.button.gold{background:#c9a87a}
 section{padding:35px 0}
 h2{font-size:30px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .card{padding:24px;border:1px solid #292a37;border-radius:16px;background:#101118}
 .card h3{margin-top:0}
+.chat-shell{border:1px solid #292a37;border-radius:20px;overflow:hidden;background:#0e0f16}
+.chat-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px 20px;border-bottom:1px solid #292a37;background:#12131c}
+.chat-brand{font-weight:bold;letter-spacing:2px}
+.status{font-size:12px;color:#b8b9c8}
+.status:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#777;margin-right:8px}
+.status.online:before{background:#62d69a}
+.status.offline:before{background:#ff7777}
+.usage{font-size:12px;color:#b8b9c8}
+.messages{height:390px;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:88%;padding:13px 15px;border-radius:15px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6;font-size:14px}
+.msg.assistant{align-self:flex-start;background:#191a26;border:1px solid #2b2c3a;color:#f0effa;border-bottom-left-radius:4px}
+.msg.user{align-self:flex-end;background:#a995ff;color:#15111f;border-bottom-right-radius:4px}
+.msg.system{align-self:center;max-width:100%;font-size:12px;color:#ffcc9d;background:#241b17}
+.chat-compose{padding:14px;border-top:1px solid #292a37;background:#12131c}
+.chat-form{display:flex;align-items:flex-end;gap:10px}
+#messageInput{flex:1;min-width:0;resize:vertical;min-height:48px;max-height:140px;padding:14px;border-radius:12px;border:1px solid #343544;background:#090a10;color:#fff;font:inherit;line-height:1.5;outline:none}
+#messageInput:focus{border-color:#a995ff}
+#sendButton{margin:0;min-height:48px;padding:12px 18px}
+#sendButton:disabled,#messageInput:disabled{opacity:.55;cursor:not-allowed}
+.chat-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px}
+.hint{font-size:11px;color:#858697}
+.text-button{border:0;background:transparent;color:#b7a5ff;cursor:pointer;text-decoration:underline;font-size:12px;padding:8px}
 footer{border-top:1px solid #252630;color:#858697;font-size:13px;padding-top:28px;padding-bottom:35px}
+@media(max-width:600px){header,main,footer{padding:18px}.tag{text-align:right}.hero{padding-top:60px}.messages{height:360px;padding:12px}.msg{max-width:94%}.chat-top{padding:15px}.chat-form{gap:7px}#sendButton{padding:12px;font-size:13px}}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">AQVORIX</div>
-<div class="tag">Un nuevo espacio para tus ideas</div>
+  <div class="logo">AQVORIX</div>
+  <div class="tag">Un nuevo espacio para tus ideas</div>
 </header>
 <main>
-<section class="hero">
-<span class="badge">INTELIGENCIA · CREATIVIDAD · CONEXIÓN</span>
-<h1>Ideas que avanzan.<br><span>Conversaciones sin límites.</span></h1>
-<p>AQVORIX es un espacio digital pensado para explorar ideas, encontrar inspiración y transformar cada conversación en nuevas posibilidades.</p>
-<a class="button" href="#experiencia">Descubrir AQVORIX</a>
-<a class="button" href="https://expo.dev/artifacts/eas/dM6A741ZklpmOEkIyL42lUsO-1Y4EDcKpmWV4GYT83I.apk" style="margin-left:10px;background:#c9a87a" download>Descargar AQVORIX para Android</a>
-</section>
-<section id="experiencia">
-<h2>Una experiencia diferente</h2>
-<p>Un espacio diseñado para acompañar tu curiosidad y ayudarte a avanzar.</p>
-<div class="cards">
-<article class="card"><h3>Conversaciones</h3><p>Explorá preguntas, compartí ideas y descubrí nuevas perspectivas.</p></article>
-<article class="card"><h3>Creatividad</h3><p>Dale forma a tus proyectos y encontrá inspiración para lo que viene.</p></article>
-<article class="card"><h3>A tu manera</h3><p>Un entorno digital moderno, simple y pensado para vos.</p></article>
-</div>
-</section>
-<section>
-<h2>El futuro empieza con una idea.</h2>
-<p>AQVORIX. Tu espacio para explorar lo que sigue.</p>
-</section>
+  <section class="hero">
+    <span class="badge">INTELIGENCIA · CREATIVIDAD · CONEXIÓN</span>
+    <h1>Ideas que avanzan.<br><span>Conversaciones sin límites.</span></h1>
+    <p>AQVORIX es un espacio digital pensado para explorar ideas, encontrar inspiración y transformar cada conversación en nuevas posibilidades.</p>
+    <a class="button" href="#chat">Hablar con AQVORIX</a>
+    <a class="button gold" href="https://expo.dev/artifacts/eas/dM6A741ZklpmOEkIyL42lUsO-1Y4EDcKpmWV4GYT83I.apk" download>Descargar AQVORIX para Android</a>
+  </section>
+
+  <section id="chat">
+    <h2>Hablá con AQVORIX</h2>
+    <p>Una conversación para explorar ideas, resolver dudas y dar forma a tus proyectos.</p>
+    <div class="chat-shell">
+      <div class="chat-top">
+        <div>
+          <div class="chat-brand">AQVORIX <span style="color:#a995ff">✦</span></div>
+          <div class="status" id="connectionStatus" role="status">Conectando al servidor…</div>
+        </div>
+        <div class="usage" id="usageLabel">Consultando uso…</div>
+      </div>
+      <div class="messages" id="messages" role="log" aria-live="polite" aria-label="Conversación con AQVORIX">
+        <div class="msg assistant">¡Hola! Soy AQVORIX. ¿Qué te gustaría explorar hoy?</div>
+      </div>
+      <div class="chat-compose">
+        <form id="chatForm" class="chat-form">
+          <textarea id="messageInput" rows="1" maxlength="6000" placeholder="Escribí tu mensaje…" aria-label="Tu mensaje" required></textarea>
+          <button class="button" id="sendButton" type="submit">Enviar</button>
+        </form>
+        <div class="chat-actions">
+          <span class="hint">Tu historial web se guarda en el servidor asociado a este navegador.</span>
+          <button class="text-button" id="clearHistory" type="button">Borrar mi historial web</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <h2>Una experiencia diferente</h2>
+    <p>Un espacio diseñado para acompañar tu curiosidad y ayudarte a avanzar.</p>
+    <div class="cards">
+      <article class="card"><h3>Conversaciones</h3><p>Explorá preguntas, compartí ideas y descubrí nuevas perspectivas.</p></article>
+      <article class="card"><h3>Creatividad</h3><p>Dale forma a tus proyectos y encontrá inspiración para lo que viene.</p></article>
+      <article class="card"><h3>A tu manera</h3><p>Un entorno digital moderno, simple y pensado para vos.</p></article>
+    </div>
+  </section>
+  <section>
+    <h2>El futuro empieza con una idea.</h2>
+    <p>AQVORIX. Tu espacio para explorar lo que sigue.</p>
+  </section>
 </main>
 <footer>© 2026 AQVORIX · Todos los derechos reservados.</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  const API = "https://aqvorix-server.onrender.com";
+  const USER_KEY = "aqvorix_web_user_id";
+  const messagesEl = document.getElementById("messages");
+  const statusEl = document.getElementById("connectionStatus");
+  const usageEl = document.getElementById("usageLabel");
+  const form = document.getElementById("chatForm");
+  const input = document.getElementById("messageInput");
+  const sendButton = document.getElementById("sendButton");
+  const clearButton = document.getElementById("clearHistory");
+
+  let userId = "";
+  let sending = false;
+  let connected = false;
+  let currentUsage = null;
+
+  function getUserId() {
+    try {
+      let id = localStorage.getItem(USER_KEY);
+      if (!id) {
+        const random = (window.crypto && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
+        id = "web-" + random;
+        localStorage.setItem(USER_KEY, id);
+      }
+      return id;
+    } catch (error) {
+      return "web-session-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
+    }
+  }
+
+  function setStatus(text, state) {
+    statusEl.textContent = text;
+    statusEl.className = "status" + (state ? " " + state : "");
+  }
+
+  function addMessage(text, role) {
+    const bubble = document.createElement("div");
+    bubble.className = "msg " + role;
+    bubble.textContent = String(text ?? "");
+    messagesEl.appendChild(bubble);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return bubble;
+  }
+
+  function renderUsage(data) {
+    if (!data || typeof data !== "object") {
+      usageEl.textContent = "Uso diario no disponible";
+      return;
+    }
+    currentUsage = data;
+    if (data.pro) {
+      usageEl.textContent = "AQVORIX PRO";
+      return;
+    }
+    const used = Math.max(0, Number(data.used) || 0);
+    const limit = Number(data.limit) > 0 ? Number(data.limit) : 20;
+    usageEl.textContent = "Uso gratuito: " + Math.min(used, limit) + "/" + limit;
+  }
+
+  async function api(path, options = {}) {
+    const response = await fetch(API + path, {
+      ...options,
+      headers: {
+        "Content-Type": "application/json",
+        ...(options.headers || {})
+      }
+    });
+    let data;
+    try {
+      data = await response.json();
+    } catch (error) {
+      throw new Error("El servidor devolvió una respuesta no válida.");
+    }
+    if (!response.ok) {
+      const err = new Error(data.error || "No se pudo completar la solicitud.");
+      err.status = response.status;
+      err.data = data;
+      throw err;
+    }
+    return data;
+  }
+
+  async function refreshUsage() {
+    const data = await api("/api/usage?userId=" + encodeURIComponent(userId));
+    renderUsage(data);
+    return data;
+  }
+
+  async function loadChat() {
+    userId = getUserId();
+    try {
+      const results = await Promise.all([
+        api("/api/history?userId=" + encodeURIComponent(userId)),
+        api("/api/usage?userId=" + encodeURIComponent(userId))
+      ]);
+      connected = true;
+      setStatus("Servidor conectado", "online");
+      renderUsage(results[1]);
+      const history = Array.isArray(results[0].messages)
+        ? results[0].messages
+        : (Array.isArray(results[0].history) ? results[0].history : []);
+      messagesEl.replaceChildren();
+      if (history.length === 0) {
+        addMessage("¡Hola! Soy AQVORIX. ¿Qué te gustaría explorar hoy?", "assistant");
+      } else {
+        for (const item of history) {
+          const role = String(item.role || item.sender || "").toLowerCase();
+          const text = item.content ?? item.message ?? item.text ?? "";
+          if (role === "user" || role === "assistant") addMessage(text, role);
+        }
+        if (!messagesEl.childElementCount) {
+          addMessage("¡Hola! Soy AQVORIX. ¿Qué te gustaría explorar hoy?", "assistant");
+        }
+      }
+    } catch (error) {
+      connected = false;
+      setStatus("No se pudo conectar al servidor", "offline");
+      usageEl.textContent = "Uso diario no disponible";
+      messagesEl.replaceChildren();
+      addMessage("No pude cargar la conversación. Revisá tu conexión e intentá recargar la página.", "system");
+      addMessage("¡Hola! Soy AQVORIX. Cuando el servidor esté disponible, podremos conversar.", "assistant");
+    }
+    updateControls();
+  }
+
+  function updateControls() {
+    const limit = currentUsage && Number(currentUsage.limit) > 0
+      ? Number(currentUsage.limit)
+      : 20;
+    const exhausted = currentUsage && !currentUsage.pro &&
+      (Number(currentUsage.used) || 0) >= limit;
+    input.disabled = sending || !connected || Boolean(exhausted);
+    sendButton.disabled = sending || !connected || Boolean(exhausted);
+    sendButton.textContent = sending ? "Enviando…" : (exhausted ? "Límite alcanzado" : "Enviar");
+    if (exhausted) {
+      usageEl.textContent = "Límite gratuito alcanzado";
+    }
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const message = input.value.trim();
+    if (!message || sending) return;
+    if (!connected) {
+      addMessage("No hay conexión con el servidor. Recargá la página e intentá de nuevo.", "system");
+      return;
+    }
+
+    sending = true;
+    addMessage(message, "user");
+    input.value = "";
+    updateControls();
+
+    try {
+      const data = await api("/api/chat", {
+        method: "POST",
+        body: JSON.stringify({ userId, message })
+      });
+      const reply = data.reply ?? data.message ?? data.assistant?.content ?? data.assistant?.message;
+      if (reply) addMessage(reply, "assistant");
+      else addMessage("El servidor respondió, pero no devolvió un mensaje para mostrar.", "system");
+      if (data.usage) renderUsage(data.usage);
+      else await refreshUsage();
+    } catch (error) {
+      if (error.status === 429) {
+        if (error.data && error.data.usage) renderUsage(error.data.usage);
+        addMessage(error.data?.error || "Alcanzaste el límite gratuito diario.", "system");
+      } else {
+        addMessage(error.message || "No pude enviar el mensaje. Intentá nuevamente.", "system");
+      }
+    } finally {
+      sending = false;
+      updateControls();
+      input.focus();
+    }
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  clearButton.addEventListener("click", async () => {
+    if (sending) return;
+    if (!window.confirm("¿Querés borrar todo el historial de AQVORIX asociado a este navegador? Esta acción no se puede deshacer.")) return;
+    clearButton.disabled = true;
+    try {
+      await api("/api/history?userId=" + encodeURIComponent(userId), { method: "DELETE" });
+      messagesEl.replaceChildren();
+      addMessage("Historial borrado. ¡Hola de nuevo! ¿Qué te gustaría explorar?", "assistant");
+      await refreshUsage();
+    } catch (error) {
+      addMessage("No se pudo borrar el historial: " + (error.message || "error de conexión"), "system");
+    } finally {
+      clearButton.disabled = false;
+    }
+  });
+
+  loadChat();
+})();
+</script>
 </body>
 </html>
