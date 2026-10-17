@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aqvorix.github.io/aqvorix-web/sitemap.xml
